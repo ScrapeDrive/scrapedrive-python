@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.13"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+
+      - name: Sync dependencies
+        run: uv sync --group dev --frozen
+
+      - name: Ruff
+        run: uv run ruff check
+
+      - name: Pytest
+        run: uv run pytest
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.13"
+          enable-cache: true
+
+      - name: Build artifacts
+        run: uv build
+
+      - name: Smoke install wheel
+        shell: bash
+        run: |
+          uv venv .wheel-smoke --python 3.13
+          wheel="$(find dist -name 'scrapedrive-*.whl' | head -n 1)"
+          uv pip install --python .wheel-smoke/bin/python "$wheel"
+          .wheel-smoke/bin/python -c "import importlib.metadata, scrapedrive; print(importlib.metadata.version('scrapedrive')); print(scrapedrive.__version__)"
