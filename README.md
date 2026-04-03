@@ -107,9 +107,7 @@ with ScrapeDrive() as client:
 ## AI Agents
 
 Provider-agnostic agent guidance lives in `AGENTS.md`.
-
-This repo also includes a repo-local Codex skill at `.codex/skills/scrapedrive-sdk`, but that is
-just a Codex-specific adapter. Keep `AGENTS.md` as the canonical source of truth for agent behavior.
+This repo does not ship provider-specific agent config.
 
 ## Development
 

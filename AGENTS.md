@@ -59,8 +59,6 @@ This repository contains the `scrapedrive` Python SDK. Use it for:
 - Use `tests/test_live.py` when you need the current live API expectations.
 - Use `src/scrapedrive/client.py` and `src/scrapedrive/models.py` when changing request defaults or response normalization.
 
-## Provider-Specific Adapters
-
-- Codex: `.codex/skills/scrapedrive-sdk`
-
-If you add support for other agent ecosystems later, keep this file canonical and add provider-specific adapters that point back to it.
+Do not keep provider-specific agent config in this repository unless there is a strong reason.
+If you add adapters for specific ecosystems later, treat this file as canonical and generate those
+adapters from it rather than making them the source of truth.
