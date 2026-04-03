@@ -106,9 +106,10 @@ with ScrapeDrive() as client:
 
 ## AI Agents
 
-This repo includes a repo-local Codex skill at `.codex/skills/scrapedrive-sdk`.
-It teaches agents how to choose sync vs async flows, pick tiers, avoid random geo selection,
-forward target headers, and handle screenshot and async job response quirks.
+Provider-agnostic agent guidance lives in `AGENTS.md`.
+
+This repo also includes a repo-local Codex skill at `.codex/skills/scrapedrive-sdk`, but that is
+just a Codex-specific adapter. Keep `AGENTS.md` as the canonical source of truth for agent behavior.
 
 ## Development
 

@@ -6,6 +6,7 @@ description: Use the ScrapeDrive Python SDK for web fetching, JS rendering, scre
 # ScrapeDrive SDK
 
 Use this skill when writing code that calls `scrapedrive` or when maintaining this repository.
+Treat `AGENTS.md` in the repo root as the canonical provider-agnostic guide. This skill is the Codex-specific adapter for the same guidance.
 
 ## Choose The Flow
 
