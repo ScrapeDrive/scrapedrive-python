@@ -129,4 +129,7 @@ SCRAPEDRIVE_RUN_LIVE_TESTS=1 uv run pytest tests/test_live.py
 uv build
 ```
 
-See `RELEASING.md` for the wheel smoke-install workflow and release checklist.
+## PyPI
+
+The package is prepared for PyPI publishing via GitHub Actions Trusted Publishing.
+See `RELEASING.md` for the wheel smoke-install workflow, PyPI setup, and release checklist.

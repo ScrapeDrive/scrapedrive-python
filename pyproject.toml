@@ -24,8 +24,9 @@ dependencies = [
 
 [project.urls]
 Documentation = "https://scrapedrive.com/docs/"
-Homepage = "https://scrapedrive.com"
-Issues = "https://scrapedrive.com"
+Homepage = "https://github.com/ScrapeDrive/scrapedrive-python"
+Issues = "https://github.com/ScrapeDrive/scrapedrive-python/issues"
+Repository = "https://github.com/ScrapeDrive/scrapedrive-python"
 
 [build-system]
 requires = ["hatchling"]
