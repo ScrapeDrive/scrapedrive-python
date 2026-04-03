@@ -1,0 +1,4 @@
+interface:
+  display_name: "ScrapeDrive SDK"
+  short_description: "Use ScrapeDrive safely from coding agents"
+  default_prompt: "Use $scrapedrive-sdk to choose the right ScrapeDrive SDK flow for this agent task."
